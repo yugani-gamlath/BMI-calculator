@@ -1,0 +1,75 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>BMI-Calculator</title>
+    <style>
+
+        body{
+            margin: 20px; 
+            text-align: center; 
+            background-image: url(images/a081cbdb1d781ffd39915465613470c0-700.jpg); 
+            background-repeat: no-repeat; 
+            background-size: cover; 
+            font-size: 25px;
+            color: indigo;
+        }
+
+        #btn{
+            border-radius: 25px;
+            padding: 15px;
+            border-style: double;
+            border-color: darkmagenta;
+            color:mediumblue;
+            font-size: 25px;
+            text-align: center;
+            background-color: lightsalmon;
+        }
+
+        #btn:hover{
+            background-color: blueviolet;
+        }
+
+        #weight, #height, #name, #age{
+            padding: 15px;
+            border-radius: 20px;
+            border-color: darkmagenta;
+            color:mediumblue;
+            font-size: 20px;
+            text-align: center;
+            background-color:whitesmoke;  
+        }
+
+        #image{
+            border-radius: 50px;  
+        }
+
+    </style>
+</head>
+<body>
+   
+    <h1><i>Body Mass Index (BMI) Calculator</i></h1>
+    <input type="text" name="" placeholder="Enter Your Name Here:" id="name">
+    <input type="number" name="" placeholder="Enter Your Age Here:" id="age"><br><br>
+    <input type="text" name="" placeholder="Enter Your Weight Here:(kg)" id="weight">
+    <input type="text" name="" placeholder="Enter Your Height Here:(m)" id="height"><br><br>
+    <button id="btn" onclick="modifyText()">Calculate BMI Value</button><br>
+    <p id="result"></p>
+    <img src="images/1_kwPOcClxxH_uWPJLxxYa0Q.jpeg" alt="" width="500px" height="400px" id="image">
+
+    <script>
+        
+        function modifyText() {
+            let name = document.getElementById('name').value;
+            let age = document.getElementById('age').value
+            let weight = document.getElementById('weight').value;
+            let height = document.getElementById('height').value;
+            let bmi = weight / (height*height);
+            document.getElementById('result').innerText="Hello " +name+ " ("+age+" years old), your BMI value is " +bmi.toFixed(1)+ " kg/m2";
+        }
+
+    </script>
+</body>
+</html>
